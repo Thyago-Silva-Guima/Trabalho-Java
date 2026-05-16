@@ -37,8 +37,8 @@ public class MenuConsole {
                 case 4 -> menuRealizarEmprestimo();
                 case 5 -> menuRealizarDevolucao();
                 case 6 -> menuRelatorios();
-                case 0 -> System.out.println("\nSaindo do sistema. Até logo!");
-                default -> System.out.println("\nOpção inválida. Tente novamente.");
+                case 0 -> System.out.println("Saindo do sistema");
+                default -> System.out.println("Opção inválida");
             }
         }
     }
