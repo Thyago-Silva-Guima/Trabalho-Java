@@ -73,17 +73,10 @@ public class Emprestimo {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Emprestimo{");
-        sb.append("emprestimoAtivo=").append(emprestimoAtivo);
-        sb.append(", idEmprestimo=").append(idEmprestimo);
-        sb.append(", usuario=").append(usuario);
-        sb.append(", livro=").append(livro);
-        sb.append(", dataPrevistaDevolucao=").append(dataPrevistaDevolucao);
-        sb.append(", dataDevolucaoRealizada=").append(dataDevolucaoRealizada);
-        sb.append('}');
-        return sb.toString();
+        return "Emprestimo [emprestimoAtivo=" + emprestimoAtivo + ", idEmprestimo=" + idEmprestimo + ", usuario="+ usuario + ", livro=" + livro + ", dataEmprestimo=" + dataEmprestimo + ", dataPrevistaDevolucao="+ dataPrevistaDevolucao + ", dataDevolucaoRealizada=" + dataDevolucaoRealizada + "]";
     }
+
+  
 
 
         

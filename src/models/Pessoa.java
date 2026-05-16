@@ -32,17 +32,11 @@ public abstract class  Pessoa {
     public int getIdUsuario() {
         return idUsuario;
     }
-
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Pessoa{");
-        sb.append("nome=").append(nome);
-        sb.append(", email=").append(email);
-        sb.append(", endereco=").append(endereco);
-        sb.append(", telefone=").append(telefone);
-        sb.append('}');
-        return sb.toString();
+        return "Pessoa [nome=" + nome + ", email=" + email + ", endereco=" + endereco + ", telefone=" + telefone+ ", idUsuario=" + idUsuario + "]";
     }
+
+   
 
 }
