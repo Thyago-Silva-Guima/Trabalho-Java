@@ -23,6 +23,6 @@ public class Aluno extends Pessoa {
 
     @Override
     public String toString() {
-        return "Aluno [codigoMatricula=" + codigoMatricula + ", nome=" + nome + ", email=" + email + ", endereco=" + endereco + ", telefone=" + telefone + ", limiteDiasEmprestimo()=" + limiteDiasEmprestimo();
+        return "Aluno [codigoMatricula=" + codigoMatricula + ", nome=" + nome + ", email=" + email + ", endereco=" + endereco + ", telefone=" + telefone + ", limiteDiasEmprestimo()=" + limiteDiasEmprestimo() + "]";
     }
 }

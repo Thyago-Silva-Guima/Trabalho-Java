@@ -6,23 +6,22 @@ public class Livro {
         return contadorId;
     }
 
-    public static void setContadorId(int contadorId) {
-        Livro.contadorId = contadorId;
-    }
     private int idLivro;
     private int anoPublicacao;
     private int numeroExemplaresDisponiveis;
     private String autor;
     private String titulo;
+    private String categoria;
     private static int contadorId = 1;
     
 
-    public Livro(int anoPublicacao, String autor, int numeroExemplaresDisponiveis, String titulo) {
+    public Livro(int anoPublicacao, String autor, int numeroExemplaresDisponiveis, String titulo,String categoria) {
         this.anoPublicacao = anoPublicacao;
         this.autor = autor;
         this.idLivro = contadorId++;
         this.numeroExemplaresDisponiveis = numeroExemplaresDisponiveis;
         this.titulo = titulo;
+        this.categoria= categoria;
     }
 
     public int getIdLivro(){
@@ -48,18 +47,16 @@ public class Livro {
     public String getTitulo() {
         return titulo;
     }
+    
+     public String getCategoria() {
+        return categoria;
+     }
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Livro{");
-        sb.append("idLivro=").append(idLivro);
-        sb.append(", anoPublicacao=").append(anoPublicacao);
-        sb.append(", numeroExemplaresDisponiveis=").append(numeroExemplaresDisponiveis);
-        sb.append(", autor=").append(autor);
-        sb.append(", titulo=").append(titulo);
-        sb.append('}');
-        return sb.toString();
+        return "Livro [idLivro=" + idLivro + ", anoPublicacao=" + anoPublicacao + ", numeroExemplaresDisponiveis="
+                + numeroExemplaresDisponiveis + ", autor=" + autor + ", titulo=" + titulo + ", categoria=" + categoria
+                + "]";
     }
 
 }

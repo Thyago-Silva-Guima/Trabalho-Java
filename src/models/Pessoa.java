@@ -5,12 +5,15 @@ public abstract class  Pessoa {
     protected String email;
     protected String endereco;
     protected String telefone;
+    private static int contadorId=1;
+    private int idUsuario;
 
     public Pessoa(String email, String endereco, String nome, String telefone) {
         this.email = email;
         this.endereco = endereco;
         this.nome = nome;
         this.telefone = telefone;
+        this.idUsuario=contadorId++;
     }
     public abstract int limiteDiasEmprestimo();
     public String getNome() {
@@ -24,6 +27,10 @@ public abstract class  Pessoa {
     }
     public String getTelefone() {
         return telefone;
+    }
+    
+    public int getIdUsuario() {
+        return idUsuario;
     }
 
     @Override

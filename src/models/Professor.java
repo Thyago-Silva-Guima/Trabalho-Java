@@ -23,11 +23,7 @@ public class Professor extends Pessoa{
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Professor{");
-        sb.append("departamento=").append(departamento);
-        sb.append('}');
-        return sb.toString();
+        return "Professor [nome=" + nome + ", departamento=" + departamento + ", email=" + email + ", endereco="+ endereco + ", telefone=" + telefone + "]";
     }
     
 }

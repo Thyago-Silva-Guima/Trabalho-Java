@@ -21,6 +21,21 @@ public class Emprestimo {
         this.dataDevolucaoRealizada = null;
     }
 
+    public long calcularDiasEmprestados(){
+            LocalDate fim= (dataDevolucaoRealizada != null)
+            ? dataDevolucaoRealizada 
+            :LocalDate.now();
+            return java.time.temporal.ChronoUnit.DAYS.between(dataEmprestimo, fim); 
+    }
+    
+    public long calcularDiasAtraso(){
+        LocalDate fim = (dataDevolucaoRealizada !=null)
+            ? dataDevolucaoRealizada
+            : LocalDate.now();
+            long atraso = java.time.temporal.ChronoUnit.DAYS.between(dataPrevistaDevolucao, fim);
+            return Math.max(0,atraso);
+    }
+
     public boolean isEmprestimoAtivo() {
         return emprestimoAtivo;
     }
@@ -52,6 +67,9 @@ public class Emprestimo {
     public void setDataDevolucaoRealizada(LocalDate dataDevolucaoRealizada) {
         this.dataDevolucaoRealizada = dataDevolucaoRealizada;
     }
+    public LocalDate getDataEmprestimo() {
+        return dataEmprestimo;
+    }
 
     @Override
     public String toString() {
@@ -66,6 +84,7 @@ public class Emprestimo {
         sb.append('}');
         return sb.toString();
     }
+
 
         
 }
