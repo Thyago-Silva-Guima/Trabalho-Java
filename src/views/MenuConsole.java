@@ -108,19 +108,19 @@ public class MenuConsole {
                 Aluno aluno = new Aluno(email, endereco, nome, telefone, matricula);
 
                 bibliotecaController.cadastrarUsuario(aluno);
-                System.out.println("\nAluno cadastrado com sucesso!");
+                System.out.println("Aluno cadastrado");
 
             } else if (tipo == 2) {
                 System.out.print("Departamento: ");
                 String departamento = scanner.nextLine();
                 Professor professor = new Professor(email, endereco, nome, telefone, departamento);
                 bibliotecaController.cadastrarUsuario(professor);
-                System.out.println("\nProfessor cadastrado com sucesso!");
+                System.out.println("Professor cadastrado");
             } else {
-                System.out.println("\nTipo de usuário inválido.");
+                System.out.println("Tipo de usuário inválido.");
             }
         } catch (Exception e) {
-            System.out.println("\nErro ao cadastrar usuário: " + e.getMessage());
+            System.out.println("Erro ao cadastrar usuário: " + e.getMessage());
         }
     }
 
@@ -133,7 +133,7 @@ public class MenuConsole {
         List<Livro> resultado = bibliotecaController.pesquisarLivro(termoBusca);
 
         if (resultado == null || resultado.isEmpty()) {
-            System.out.println("\nNenhum livro encontrado.");
+            System.out.println("Nenhum livro encontrado.");
         } else {
             System.out.println("Livros encontrados:");
             for (Livro livro : resultado) {
