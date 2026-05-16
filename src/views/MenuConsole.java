@@ -125,7 +125,7 @@ public class MenuConsole {
     }
 
     private void menuPesquisarLivro() {
-        System.out.println("\n--- Pesquisar Livro ---");
+        System.out.println("=== Pesquisar Livro ===");
         System.out.print("Digite o título, autor, categoria ou código: ");
 
         String termoBusca = scanner.nextLine();
@@ -135,7 +135,7 @@ public class MenuConsole {
         if (resultado == null || resultado.isEmpty()) {
             System.out.println("\nNenhum livro encontrado.");
         } else {
-            System.out.println("\nLivros encontrados:");
+            System.out.println("Livros encontrados:");
             for (Livro livro : resultado) {
                 System.out.println(livro);
             }
@@ -164,9 +164,9 @@ public class MenuConsole {
 
         try {
             bibliotecaController.realizarDevolucao(idEmprestimo);
-            System.out.println("\nDevolução realizada com sucesso!");
+            System.out.println("Devolução realizada");
         } catch (Exception e) {
-            System.out.println("\nErro ao realizar devolução: " + e.getMessage());
+            System.out.println("Erro ao realizar devolução: " + e.getMessage());
         }
     }
 
@@ -182,7 +182,7 @@ public class MenuConsole {
             case 1 -> relatorioView.exibirLivrosEmprestados();
             case 2 -> relatorioView.exibirDevolucaoAtraso();
             case 3 -> relatorioView.exibirLivrosMaisPopulares();
-            default -> System.out.println("\nOpção inválida.");
+            default -> System.out.println("Opção inválida");
         }
     }
 
@@ -191,7 +191,7 @@ public class MenuConsole {
         try {
             valor = Integer.parseInt(scanner.nextLine());
         } catch (NumberFormatException e) {
-            System.out.println("Entrada inválida. Por favor, digite um número.");
+            System.out.println("Entrada inválida. Por favor, digite um número");
         }
         return valor;
     }
