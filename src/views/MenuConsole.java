@@ -37,8 +37,8 @@ public class MenuConsole {
                 case 4 -> menuRealizarEmprestimo();
                 case 5 -> menuRealizarDevolucao();
                 case 6 -> menuRelatorios();
-                case 0 -> System.out.println("\nSaindo do sistema. Até logo!");
-                default -> System.out.println("\nOpção inválida. Tente novamente.");
+                case 0 -> System.out.println("Saindo do sistema");
+                default -> System.out.println("Opção inválida");
             }
         }
     }
@@ -108,24 +108,24 @@ public class MenuConsole {
                 Aluno aluno = new Aluno(email, endereco, nome, telefone, matricula);
 
                 bibliotecaController.cadastrarUsuario(aluno);
-                System.out.println("\nAluno cadastrado com sucesso!");
+                System.out.println("Aluno cadastrado");
 
             } else if (tipo == 2) {
                 System.out.print("Departamento: ");
                 String departamento = scanner.nextLine();
                 Professor professor = new Professor(email, endereco, nome, telefone, departamento);
                 bibliotecaController.cadastrarUsuario(professor);
-                System.out.println("\nProfessor cadastrado com sucesso!");
+                System.out.println("Professor cadastrado");
             } else {
-                System.out.println("\nTipo de usuário inválido.");
+                System.out.println("Tipo de usuário inválido.");
             }
         } catch (Exception e) {
-            System.out.println("\nErro ao cadastrar usuário: " + e.getMessage());
+            System.out.println("Erro ao cadastrar usuário: " + e.getMessage());
         }
     }
 
     private void menuPesquisarLivro() {
-        System.out.println("\n--- Pesquisar Livro ---");
+        System.out.println("=== Pesquisar Livro ===");
         System.out.print("Digite o título, autor, categoria ou código: ");
 
         String termoBusca = scanner.nextLine();
@@ -133,9 +133,9 @@ public class MenuConsole {
         List<Livro> resultado = bibliotecaController.pesquisarLivro(termoBusca);
 
         if (resultado == null || resultado.isEmpty()) {
-            System.out.println("\nNenhum livro encontrado.");
+            System.out.println("Nenhum livro encontrado.");
         } else {
-            System.out.println("\nLivros encontrados:");
+            System.out.println("Livros encontrados:");
             for (Livro livro : resultado) {
                 System.out.println(livro);
             }
@@ -164,9 +164,9 @@ public class MenuConsole {
 
         try {
             bibliotecaController.realizarDevolucao(idEmprestimo);
-            System.out.println("\nDevolução realizada com sucesso!");
+            System.out.println("Devolução realizada");
         } catch (Exception e) {
-            System.out.println("\nErro ao realizar devolução: " + e.getMessage());
+            System.out.println("Erro ao realizar devolução: " + e.getMessage());
         }
     }
 
@@ -182,7 +182,7 @@ public class MenuConsole {
             case 1 -> relatorioView.exibirLivrosEmprestados();
             case 2 -> relatorioView.exibirDevolucaoAtraso();
             case 3 -> relatorioView.exibirLivrosMaisPopulares();
-            default -> System.out.println("\nOpção inválida.");
+            default -> System.out.println("Opção inválida");
         }
     }
 
@@ -191,7 +191,7 @@ public class MenuConsole {
         try {
             valor = Integer.parseInt(scanner.nextLine());
         } catch (NumberFormatException e) {
-            System.out.println("Entrada inválida. Por favor, digite um número.");
+            System.out.println("Entrada inválida. Por favor, digite um número");
         }
         return valor;
     }
