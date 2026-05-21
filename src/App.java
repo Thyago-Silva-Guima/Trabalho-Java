@@ -1,3 +1,11 @@
+/*Integrantes do Grupo:
+Lorenzo Vanelli - RGM 42924928
+Thyago Silva Guimaraes - RMG 04283217-9
+ João Rubens - RGM 03874461-9
+ Murilo de Mattos Opis - RGM 43656641
+ Luan Neuwirth - RGM 43589707
+*/
+
 import controllers.BibliotecaController;
 import controllers.EmprestimoController;
 import utils.PreCargaDados;
