@@ -1,16 +1,16 @@
 package controllers;
 
 import interfaces.IGerenciadorBiblioteca;
-import models.Livro;
-import models.Pessoa;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import models.Livro;
+import models.Pessoa;
 
 public class BibliotecaController implements IGerenciadorBiblioteca {
 
     private List<Livro> livros = new ArrayList<>();
+    @SuppressWarnings("FieldMayBeFinal")
     private List<Pessoa> usuarios = new ArrayList<>();
     private EmprestimoController emprestimoController;
 

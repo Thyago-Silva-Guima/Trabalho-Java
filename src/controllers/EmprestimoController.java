@@ -11,6 +11,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import exceptions.LivroIndisponivelException;
+import exceptions.UsuarioComPendenciaException;
+
 public class EmprestimoController {
 
     private List<Emprestimo> emprestimos = new ArrayList<>();
@@ -21,10 +24,10 @@ public class EmprestimoController {
                 .anyMatch(e -> e.getUsuario().getIdUsuario() == usuario.getIdUsuario()
                             && e.isEmprestimoAtivo());
         if (temEmprestimoAtivo) {
-            throw new Exception("Usuário já possui um livro emprestado. Devolva antes de pegar outro livro");
+            throw new UsuarioComPendenciaException("Usuário já possui um livro emprestado. Devolva antes de pegar outro.");
         }
         if (livro.getNumeroExemplaresDisponiveis() <= 0) {
-            throw new Exception("Sem exemplares disponíveis para: " + livro.getTitulo());
+            throw new LivroIndisponivelException("Sem exemplares disponíveis para: " + livro.getTitulo());
         }
 
         Emprestimo emprestimo = new Emprestimo(usuario, livro);
